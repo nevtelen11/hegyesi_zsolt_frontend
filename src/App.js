@@ -1,24 +1,20 @@
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Nyito from './Nyito';
+import Aruk from './Aruk';
+import Megrendeles from './Megrendeles';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Nyito/>}></Route>
+        <Route path='/aruk' element={<Aruk/>}></Route>
+        <Route path='/megrendeles/:id' element={<Megrendeles/>}></Route>
+      </Routes>
+   </BrowserRouter>
   );
 }
 
